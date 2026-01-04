@@ -1,0 +1,22 @@
+ Power BI Dashboards
+
+This file documents the Power BI dashboards created as part of the
+Sales, Customer & Inventory Analytics project.
+
+---
+
+## Top 10 Products by Revenue
+![*Top Products*](images/top_products_colorful.png)
+
+
+**Insights:**
+- Identified highest revenue-generating products
+- Helped focus on high-margin SKUs
+
+---
+
+## Revenue by Region
+![*Revenue by Region*](images/revenue_by_region_colorful.png)
+**Insights:**
+- Highlighted regional sales trends
+- Supported region-wise sales strategy

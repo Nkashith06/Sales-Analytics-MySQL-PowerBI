@@ -1,0 +1,52 @@
+-- Customers table
+CREATE TABLE customers (
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(100),
+    email VARCHAR(100),
+    gender VARCHAR(10),
+    age INT,
+    region_id INT,
+    created_at DATE
+);
+
+-- Regions table
+CREATE TABLE regions (
+    region_id INT PRIMARY KEY,
+    region_name VARCHAR(50)
+);
+
+-- Products table
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    price DECIMAL(10,2)
+);
+
+-- Orders table
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    total_amount DECIMAL(12,2),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+-- Order Items table
+CREATE TABLE order_items (
+    order_item_id INT PRIMARY KEY,
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    revenue DECIMAL(12,2),
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+-- Inventory table
+CREATE TABLE inventory (
+    product_id INT PRIMARY KEY,
+    stock_quantity INT,
+    last_updated DATE,
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
